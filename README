@@ -1,0 +1,2 @@
+1) Install SMTPClient with cabal
+cabal install SMTPClient
