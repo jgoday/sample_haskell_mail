@@ -1,4 +1,4 @@
--- Modulo para opcions usando getOpt
+-- Cmd Arguments utilities using GetOpt
 module Args(
     argsGet,
     argsCreateRequiredOption,
@@ -15,7 +15,7 @@ import System.Environment
 import System.Exit
 
 
--- Devolve os argumentos e o erro
+-- Returns arguments or finish with error
 argsGet opts = do
     (args, _, err) <- getArgs >>= return . getOpt RequireOrder opts
     _args_check opts args err
@@ -28,6 +28,7 @@ _args_check opts args err = do
     when (null args) $ do { putStrLn (usageInfo "" opts);
                                  exitWith ExitSuccess }
 
+-- Create arguments
 argsCreateRequiredOption s t d o=
     Option[s][t] (ReqArg d t) o
 argsCreateOptionalOption s t d o=

@@ -4,7 +4,7 @@ import Mail
 import Data.Maybe
 -- constants
 server = Server { host = "smtp", port = 25 }
-domain = "customserver.com"
+domain = "domain.com"
 from = "jgoday@gmail.com"
 
 -- arguments
